@@ -1,0 +1,33 @@
+# Keep the full sampled response so exact and containment scoring use one rollout.
+task: triviaqa
+dataset_path: mandarjoshi/trivia_qa
+dataset_name: rc.nocontext
+output_type: generate_until
+training_split: train
+validation_split: validation
+doc_to_text: "Question: {{question}}?\nAnswer:"
+doc_to_target: "{{answer.aliases}}"
+should_decontaminate: true
+doc_to_decontamination_query: question
+generation_kwargs:
+  do_sample: true
+  temperature: 0.7
+  top_p: 0.95
+  max_gen_toks: 256
+filter_list:
+  - name: remove_whitespace
+    filter:
+      - function: take_first
+target_delimiter: " "
+metric_list:
+  - metric: !function utils_triviaqa.exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+  - metric: !function utils_triviaqa.flexible_contains_match
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 4.0
+  opd_evaluation_protocol: rethinking-opd-training-validation-v1

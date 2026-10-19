@@ -1,0 +1,4 @@
+* text=auto
+# Keep upstream formatting and distinguish engine code on GitHub.
+third_party/** linguist-vendored=true
+third_party/** -whitespace

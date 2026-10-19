@@ -1,0 +1,28 @@
+# Linux x86_64, Python 3.11, CUDA 12.8. Install from the repository root.
+-c requirements/constraints-cu128.txt
+torch==2.8.0
+torchvision==0.23.0
+torchaudio==2.8.0
+vllm==0.11.0
+transformers==4.56.1
+datasets==3.6.0
+accelerate==1.10.1
+peft==0.18.1
+trl==0.24.0
+ray[default]==2.48.0
+hydra-core==1.3.2
+tensordict==0.10.0
+torchdata==0.11.0
+numpy==1.26.4
+pyarrow==19.0.1
+pandas==2.2.3
+cupy-cuda12x==13.6.0
+opencv-python-headless==4.11.0.86
+prometheus-fastapi-instrumentator==7.1.0
+math-verify[antlr4-9-3]==0.9.0
+antlr4-python3-runtime==4.9.3
+wandb==0.21.0
+lm_eval[ifeval] @ git+https://github.com/YTianZHU/lm-evaluation-harness.git@fe13f316285edad122818e39aa059152132267fd
+-e ./third_party/verl
+-e ./third_party/llamafactory
+-e .[dev]

@@ -1,0 +1,14 @@
+OPDArena: Understanding Learning and Forgetting in On-Policy Distillation
+
+This product includes software developed by the VERL authors, the LLaMA-Factory
+team, and the authors of Rethinking On-Policy Distillation.
+
+VERL: Copyright 2023-2024 Bytedance Ltd. and/or its affiliates.
+See third_party/verl/Notice.txt and third_party/verl/LICENSE.
+
+LLaMA-Factory: see original copyright notices in source files and
+third_party/llamafactory/LICENSE.
+
+OPDArena modifications include training launch and recovery utilities, raw-input
+training, teacher-input controls, evaluation, and analysis tools.
+Original notices remain in the relevant source files. See THIRD_PARTY.md.
